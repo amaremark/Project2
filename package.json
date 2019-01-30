@@ -11,10 +11,23 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "debug": "^4.1.1",
+    "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "faker": "^4.1.0",
+    "fs": "0.0.1-security",
     "handlebars": "^4.0.12",
+    "hbs": "^4.0.1",
+    "jade": "^1.11.0",
+    "loader": "^2.1.1",
+    "mongo": "^0.1.0",
+    "mongodb": "^3.1.13",
     "mongoose": "^5.4.7",
+    "monk": "^6.0.6",
+    "morgan": "^1.9.1",
     "mustache-express": "^1.2.8",
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.18.9",
+    "serve-favicon": "^2.5.0"
   }
 }
