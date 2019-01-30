@@ -1,0 +1,27 @@
+<!-- {{#if taskes}}
+  <ul class="taskes">
+    {{#each taskes}}
+       {{> 'task'}}
+    {{/each}}
+  </ul>
+{{/if}} -->
+
+
+{{#if  taskes}}
+  <ul class="taskes">
+    {{#each taskes}}
+      <div class="card">
+        <div class="card-content">
+          <a class="card-title" href="/tasks/{{id}}">
+            {{ content }}
+          </a>
+        </div>
+        <div class="card-action">
+          <a href="/user/{{ author.id }}" class="">{{ author.local.email }}</a>
+          <span class="tasks__date">{{ createdAt }}</span>
+          <span class="tasks_comments">{{ comments.length }} Comments</span>
+        </div>
+      </div>
+    {{/each}}
+  </ul>
+{{/if}}

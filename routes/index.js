@@ -1,9 +1,12 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+// I am not sure of the routes 
+router.use('/', require('./application.js'));
+router.use('/task', require('./task'));
+router.use('/taskes', require('./taskes'));
 
-/* GET home page. */
-router.get('/', function(req, res) {
-  res.render('index', { title: 'Handlebars and MongoDB with Express 4' });
+router.all('*', (req, res) => {
+  res.status(400).send();
 });
 
 module.exports = router;

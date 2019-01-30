@@ -1,0 +1,44 @@
+
+.wrapper {
+  width: 90%;
+  max-width: 600px;
+  margin: 0 auto;
+  background: aqua;
+  }
+  nav{
+    background:hsl(42, 50%, 25%);
+    width: 710px;
+    height: 100px;
+    margin-left: 290px;
+    
+  }
+
+select {
+  display: block;
+
+}
+.brand-logo{
+background: black;
+margin-left: 10px;
+font-family: 'Shrikhand', cursive;
+border:1px solid yellow;
+border-radius: 25px;
+margin-top: 10px;
+}
+.header{
+  background-color:lightblue;
+}
+.card{
+  background:lightblue;
+  width: 710px;
+  margin-left: 100px;
+}
+li{
+  background: black;
+
+font-family: 'Shrikhand', cursive;
+border:1px solid yellow;
+border-radius: 25px;
+margin-right: 10px;
+margin-top: 10px;
+}
