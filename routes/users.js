@@ -1,9 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const userController = require("../controllers/tasks.js");
+const taskController = require("../controllres/tasks");
 
-router.get("/new", userController.new);
-router.get("/:id", userController.show);
-router.post("/", userController.create);
+router.get("/new", taskController.new);
+router.get("/:id", taskController.show);
+router.post("/", taskController.create);
 
 module.exports = router;

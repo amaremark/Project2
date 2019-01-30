@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const recipeController = require("../controllers/tasks");
+const taskController = require("../controllres/tasks");
 
-router.post("/", recipeController.create);
-router.get("/new", recipeController.new);
-router.get("/:id", recipeController.show);
-router.put("/:id", recipeController.update);
+router.post("/", taskController.create);
+router.get("/new", taskController.new);
+router.get("/:id", taskController.show);
+// router.put("/:id", taskController.update);
 
 module.exports = router;
