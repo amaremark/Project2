@@ -3,6 +3,9 @@ const Schema = mongoose.Schema;
 
 const userSchema  = new Schema({
   content: String,
+  email: String,
+  password: String,
+
   recipes:[
     {
      type: Schema.Types.ObjectId,

@@ -9,6 +9,7 @@ module.exports = {
         options: { limit: 5, sort: { createdAt: -1 } }
       })
       .then(user => {
+        console.log(user)
         res.render("user/show", { user });
       });
   },

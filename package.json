@@ -15,5 +15,8 @@
     "hbs": "^4.0.1",
     "method-override": "^2.3.10",
     "mongoose": "^5.0.7"
+  },
+  "scripts":{
+  "start": "node index.js"
   }
 }
