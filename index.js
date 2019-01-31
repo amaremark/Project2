@@ -2,7 +2,7 @@
 
 const express = require("express");
 const hbs = require("hbs");
-var PORT = process.env || 5000;
+//var PORT = process.env || 5000;
 const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
 
@@ -18,4 +18,4 @@ app.use(require("./routes/index.js"));
 
 
 
-//app.listen(5000, () => console.log("server is running"));
+app.listen(5000, () => console.log("server is running"));
