@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 //const cookieParser = require('cookie-parser')
 //const session = require('express-session')
 //const passport = require('passport')
-// const usersController = require('./controllers/user')
+const usersController = require('./controllers/user.js')
 //const methodOverride = require("method-override");
 const app = express();
 
@@ -42,9 +42,8 @@ app.use(function(req, res, next) {
 })
 
 // app.use('/', usersController)
-const routes = require("./routes/index")
 
-app.use('/', routes);
+app.use(require("./routes/index.js"));
 
 
 app.listen(5000, () => console.log("server is running"));

@@ -1,25 +1,25 @@
-<!-- {{#if taskes}}
-  <ul class="taskes">
-    {{#each taskes}}
-       {{> 'task'}}
+<!-- {{#if recipes}}
+  <ul class="recipes">
+    {{#each recipes}}
+       {{> 'recipe'}}
     {{/each}}
   </ul>
 {{/if}} -->
 
 
-{{#if  taskes}}
-  <ul class="taskes">
-    {{#each taskes}}
+{{#if  recipes}}
+  <ul class="recipes">
+    {{#each recipes}}
       <div class="card">
         <div class="card-content">
-          <a class="card-title" href="/tasks/{{id}}">
+          <a class="card-title" href="/recipe/{{id}}">
             {{ content }}
           </a>
         </div>
         <div class="card-action">
           <a href="/user/{{ author.id }}" class="">{{ author.local.email }}</a>
-          <span class="tasks__date">{{ createdAt }}</span>
-          <span class="tasks_comments">{{ comments.length }} Comments</span>
+          <span class="recipe__date">{{ createdAt }}</span>
+          <span class="recipe_comments">{{ comments.length }} Comments</span>
         </div>
       </div>
     {{/each}}

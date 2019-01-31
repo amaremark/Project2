@@ -9,11 +9,11 @@ const Comment = new Schema({
   },
   author: {
     type: Schema.Types.ObjectId,
-    ref: "Newtask"
+    ref: "User"
   }
 });
 
-const Task = new Schema({
+const Recipe = new Schema({
   content: String,
   createdAt: {
     type: Date,
@@ -21,12 +21,12 @@ const Task = new Schema({
   },
   author: {
     type: Schema.Types.ObjectId,
-    ref: "Newtask"
+    ref: "User"
   },
   comments: [Comment]
 });
 
 module.exports = {
-  Task: mongoose.model("Task", Task),
+  Recipe: mongoose.model("Recipe", Recipe),
   Comment: mongoose.model("Comment", Comment)
 };

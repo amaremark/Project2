@@ -3,15 +3,15 @@ const Schema = mongoose.Schema;
 
 const userSchema  = new Schema({
   content: String,
-  taskes:[
+  recipes:[
     {
      type: Schema.Types.ObjectId,
-     ref: "Task"
+     ref: "Recipe"
     }
    ],
    author: {
     type: Schema.Types.ObjectId,
-    ref: "Newtask"
+    ref: "User"
   },
   createdAt: {
     type: Date,
@@ -27,7 +27,7 @@ const userSchema  = new Schema({
 //   recipes:[
 //     {
 //      type: Schema.Types.ObjectId,
-//      ref: "Task"
+//      ref: "Recipe"
 //     }
 //    ],
 //   createdAt: {

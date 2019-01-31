@@ -1,15 +1,15 @@
 const LocalStrategy = require('passport-local').Strategy
-const Newtask = require('../models/Newtask')
+const User = require('../models/User')
 
 module.exports = function(passport) {
 
-  passport.serializeUser(function(tasks, callback) {
-    callback(null, tasks.id)
+  passport.serializeUser(function(user, callback) {
+    callback(null, user.id)
   })
 
   passport.deserializeUser(function(id, callback) {
-    Newtask.findById(id, function(err, tasks) {
-      callback(err, tasks)
+    User.findById(id, function(err, user) {
+      callback(err, user)
     })
   })
 
@@ -18,13 +18,13 @@ module.exports = function(passport) {
     passwordField: 'password',
     passReqToCallback: true
   }, function(req, email, password, callback){
-    Newtask.findOne({'local.email': email}, function(err, tasks) {
+    User.findOne({'local.email': email}, function(err, user) {
       if (err) return callback(err)
 
-      if (tasks) {
+      if (user) {
         return callback(null, false, req.flash('signupMessage', 'Hey buddy, the email is already taken!!'))
       } else {
-        let newUser = new Newtask()
+        let newUser = new User()
         newUser.local.email = email
         newUser.local.password = newUser.encrypt(password)
 
@@ -41,16 +41,16 @@ module.exports = function(passport) {
     passwordField: 'password',
     passReqToCallback: true
   }, function(req, email, password, callback) {
-    Newtask.findOne({'local.email': email}, function(err, tasks) {
+    User.findOne({'local.email': email}, function(err, user) {
       if (err) return callback(err)
 
-      if (!tasks) {
-        return callback(null, false, req.flash('loginMessage', 'No tasks found'))
+      if (!user) {
+        return callback(null, false, req.flash('loginMessage', 'No user found'))
       }
-      if (!tasks.validPassword(password)) {
+      if (!user.validPassword(password)) {
         return callback(null, false, req.flash('loginMessage', 'Ooops, wrong password'))
       }
-      return callback(null, tasks)
+      return callback(null, user)
     })
   }))
 }
