@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-// I am not sure of the routes 
+
 router.use('/', require('./application.js'));
 router.use('/user', require('./user'));
 router.use('/recipe', require('./recipe'));
