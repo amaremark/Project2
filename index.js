@@ -14,7 +14,7 @@ app.set("view engine", "hbs");
 app.use(methodOverride("_method"));
 
 app.use(require("./routes/index.js"));
-app.set('port, process.env.PORT || 5000')
+app.set('port, process.env.PORT || 5000');
 
 // const port = process.env.PORT || 5000;
 app.listen(app.get('port'), ()=> {
