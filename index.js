@@ -15,7 +15,7 @@ app.use(methodOverride("_method"));
 
 app.use(require("./routes/index.js"));
 
-const port = process.env || 5000;
+const port = process.env.PORT || 5000;
 
 
 app.listen(5000, () => console.log("server is running"));
