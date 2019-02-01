@@ -6,7 +6,7 @@ const userSchema  = new Schema({
   email: String,
   password: String,
 
-  recipes:[
+  todolist:[
     {
      type: Schema.Types.ObjectId,
      ref: "Recipe"
